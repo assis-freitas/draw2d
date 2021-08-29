@@ -1,0 +1,43 @@
+import draw2d from '../../packages'
+
+
+/**
+ * @class
+
+ *
+ * @example
+ *
+ *    let icon =  new draw2d.shape.icon.End();
+ *
+ *    canvas.add(icon,50,10);
+ *
+ * @inheritable
+ * @author Andreas Herz
+ * @extends draw2d.shape.icon.Icon
+ */
+draw2d.shape.icon.End = draw2d.shape.icon.Icon.extend(
+  /** @lends draw2d.shape.icon.End.prototype */
+  {
+
+  NAME: "draw2d.shape.icon.End",
+
+  /**
+   *
+   * Creates a new icon element which are not assigned to any canvas.
+   *
+   * @param {Object} attr the configuration of the shape
+   */
+  constructor(attr, setter, getter) {
+    super(extend({width: 50, height: 50}, attr), setter, getter)
+  }
+  /**
+   * @private
+   * @returns {Object} the raphaelJS path object
+   */
+  createSet () {
+    return this.canvas.paper.path("M21.167,5.5,21.167,13.681,6.684,5.318,6.684,25.682,21.167,17.318,21.167,25.5,25.5,25.5,25.5,5.5z")
+  }
+}
+
+export default ;
+
